@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Sayfası</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Web Programcılığı Testi</h1>
+    <form id="testForm">
+
+        <label for="name">Adınız:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">E-posta Adresiniz:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="password">Şifre:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="age">Yaşınız:</label>
+        <input type="number" id="age" name="age" min="1" max="120" required>
+
+        <label for="gender">Cinsiyet:</label>
+        <select id="gender" name="gender">
+            <option value="erkek">Erkek</option>
+            <option value="kadin">Kadın</option>
+            <option value="diger">Diğer</option>
+        </select>
+
+        <label for="hobby">Hobileriniz:</label>
+        <input type="checkbox" id="hobby1" name="hobby" value="kitap">
+        <label for="hobby1">Kitap Okumak</label>
+        <input type="checkbox" id="hobby2" name="hobby" value="spor">
+        <label for="hobby2">Spor Yapmak</label>
+        <input type="checkbox" id="hobby3" name="hobby" value="seyahat">
+        <label for="hobby3">Seyahat Etmek</label>
+
+        <label for="color">Favori Renginizi Seçin:</label>
+        <input type="color" id="color" name="color">
+
+        <label for="date">Doğum Tarihiniz:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">Randevu Zamanı:</label>
+        <input type="time" id="time" name="time" required>
+
+        <label for="textarea">Yorumlarınız:</label>
+        <textarea id="textarea" name="comments" rows="4"></textarea>
+
+        <button type="submit">Gönder</button>
+
+    </form>
+
+</body>
+</html>
