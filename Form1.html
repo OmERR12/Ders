@@ -1,19 +1,199 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kullanıcı İşlemleri</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        section {
+            display: none;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            text-align: center;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        h2 {
+            font-size: 1.3em;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-size: 0.9em;
+            display: block;
+            text-align: left;
+            margin-bottom: 6px;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 6px 0;
+            border-radius: 6px;
+            border: 2px solid #ccc;
+            font-size: 0.9em;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            background-color: #00796b;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #004d40;
+        }
+
+        .button-group button {
+            padding: 8px 15px;
+            background-color: #0288d1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 6px;
+            font-size: 0.9em;
+            transition: background-color 0.3s;
+        }
+
+        .button-group button:hover {
+            background-color: #0277bd;
+        }
+
+        .radio-group, .checkbox-group {
+            text-align: left;
+            margin-top: 8px;
+        }
+
+        .radio-group input, .checkbox-group input {
+            margin-right: 6px;
+        }
+
+        .checkbox-group {
+            text-align: left;
+            margin-top: 12px;
+        }
+    </style>
+</head>
 <body>
 
-<h2>HTML Formu</h2>
+    
+    <section id="registerForm" class="active">
+        <h2>Yeni Üyelik</h2>
+        <form action="" method="post">
+            <label for="name">İsim:</label>
+            <input type="text" id="name" name="name" required><br>
 
-<form action="/action_page.php">
-  <label for="fname">Adınız:</label><br>
-  <input type="text" id="isim" name="isim" ><br>
-  <label for="lname">Soyadınız</label><br>
-  <input type="text" id="sisim" name="sisim"><br><br>
-  <input type="submit" value="Gönder">
-</form> 
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
 
-<p>Gönder butonuna tıklanınca 
-"/action_page.php" sayfasına veriler gönderilecek</p>
+            <label for="password">Şifre:</label>
+            <input type="password" id="password" name="password" required><br>
+
+            <label for="birthdate">Doğum Tarihi:</label>
+            <input type="date" id="birthdate" name="birthdate" required><br>
+
+            <div class="radio-group">
+                <label>Cinsiyet:</label><br>
+                <input type="radio" id="male" name="gender" value="Erkek"><label for="male">Erkek</label><br>
+                <input type="radio" id="female" name="gender" value="Kadın"><label for="female">Kadın</label><br>
+            </div>
+
+            <label for="city">Şehir:</label>
+            <select id="city" name="city">
+                <option value="denizli">Denizli</option>
+                <option value="usak">Uşak</option>
+                <option value="burdur">Burdur</option>
+            </select><br>
+
+            <div class="checkbox-group">
+                <label>Hobileriniz:</label><br>
+                <input type="checkbox" id="hobby1" name="hobbies" value="film"><label for="hobby1">Film İzlemek</label><br>
+                <input type="checkbox" id="hobby2" name="hobbies" value="resim"><label for="hobby2">Resim Çizme</label><br>
+                <input type="checkbox" id="hobby3" name="hobbies" value="kahve"><label for="hobby3">Kahve İçmek</label><br>
+            </div>
+
+            <input type="submit" value="Kaydı Tamamla">
+        </form>
+
+        <div class="button-group">
+            <button type="button" onclick="toggleVisibility('loginForm')">Kullanıcı Girişi</button>
+            <button type="button" onclick="toggleVisibility('forgotPasswordForm')">Şifre Yardımı</button>
+        </div>
+    </section>
+
+    
+    <section id="loginForm">
+        <h2>Kullanıcı Girişi</h2>
+        <form action="" method="post">
+            <label for="loginEmail">Email:</label>
+            <input type="email" id="loginEmail" name="loginEmail" required><br>
+
+            <label for="loginPassword">Şifre:</label>
+            <input type="password" id="loginPassword" name="loginPassword" required><br>
+
+            <input type="submit" value="Giriş Yap">
+        </form>
+
+        <div class="button-group">
+            <button type="button" onclick="toggleVisibility('registerForm')">Yeni Üyelik</button>
+            <button type="button" onclick="toggleVisibility('forgotPasswordForm')">Şifre Yardımı</button>
+        </div>
+    </section>
+
+    
+    <section id="forgotPasswordForm">
+        <h2>Şifre Yardımı</h2>
+        <form action="" method="post">
+            <label for="resetEmail">Email:</label>
+            <input type="email" id="resetEmail" name="resetEmail" required><br>
+
+            <input type="submit" value="Yenile">
+        </form>
+
+        <div class="button-group">
+            <button type="button" onclick="toggleVisibility('registerForm')">Yeni Üyelik</button>
+            <button type="button" onclick="toggleVisibility('loginForm')">Kullanıcı Girişi</button>
+        </div>
+    </section>
+
+    <script>
+        function toggleVisibility(formId) {
+            document.querySelectorAll('section').forEach(form => form.classList.remove('active'));
+            document.getElementById(formId).classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
