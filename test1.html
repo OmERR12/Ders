@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Programlama Testi</title>
+    <title>HTML Testi</title>
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -100,51 +100,43 @@
 <body>
 
     <form action="" method="post">
-        <h1>Web Programcılığı Testi</h1>
+        <h1>HTML Testi</h1>
 
-        <!-- JavaScript Yılı -->
-        <label for="q1">JavaScript hangi yıl icat edilmiştir?</label>
+       
+        <label for="q1">HTML etiketlerinin temel yapısını açıklayın.</label>
         <input type="text" id="q1" name="q1" required>
 
-        <!-- HTML Amaç -->
-        <label for="q2">HTML hangi amaçla kullanılır?</label>
-        <div class="radio-group">
-            <input type="radio" id="structure" name="q2" value="Yapılandırma" required>
-            <label for="structure">Web Sayfası Yapılandırması</label>
+        
 
-            <input type="radio" id="design" name="q2" value="Tasarım">
-            <label for="design">Tasarım</label>
-        </div>
-
-        <!-- CSS Özelliği -->
-        <label for="q3">CSS’de, font büyüklüğünü değiştirmek için hangi özellik kullanılır?</label>
+        
+        <label for="q3">HTML’de hangi etiketle bağlantı oluşturulur?</label>
         <select id="q3" name="q3" required>
-            <option value="font-style">font-style</option>
-            <option value="font-size">font-size</option>
-            <option value="font-weight">font-weight</option>
+            <option value="a">`<a>`</option>
+            <option value="link">`<link>`</option>
+            <option value="button">`<button>`</option>
         </select>
 
-        <!-- HTML5 Etiketleri -->
-        <label>HTML5 ile gelen yeni etiketler hangileridir?</label>
+        
+        <label>HTML5 ile gelen yeni etiketlerden biri nedir?</label>
         <div class="checkbox-group">
-            <input type="checkbox" id="video" name="q4[]" value="video">
-            <label for="video">video</label>
-
             <input type="checkbox" id="article" name="q4[]" value="article">
             <label for="article">article</label>
 
-            <input type="checkbox" id="header" name="q4[]" value="header">
-            <label for="header">header</label>
+            <input type="checkbox" id="section" name="q4[]" value="section">
+            <label for="section">section</label>
+
+            <input type="checkbox" id="footer" name="q4[]" value="footer">
+            <label for="footer">footer</label>
 
             <input type="checkbox" id="blink" name="q4[]" value="blink">
             <label for="blink">blink</label>
         </div>
 
-        <!-- İnteraktif Dil -->
-        <label for="q5">Bir web sayfasına interaktif özellikler eklemek için hangi dil kullanılır?</label>
+        
+        <label for="q5">Bir görseli HTML ile sayfada göstermek için hangi etiket kullanılır?</label>
         <textarea id="q5" name="q5" rows="4" required></textarea>
 
-        <!-- Gönder Butonu -->
+        
         <input type="submit" value="Testi Bitir">
     </form>
 
