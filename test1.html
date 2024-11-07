@@ -5,98 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Programlama Testi</title>
     <style>
-        
         body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
-            background-color: #f4f7fc;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #444;
         }
 
-        
         form {
             background-color: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            width: 500px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            width: 400px;
             color: #333;
         }
 
-       
         h1 {
+            font-size: 1.8em;
+            color: #0066cc;
+            margin-bottom: 30px;
             text-align: center;
-            font-size: 2em;
-            margin-bottom: 25px;
-            color: #f77f00;
-            text-transform: uppercase;
-            font-weight: bold;
+            font-weight: 600;
         }
 
-       
         label {
-            font-weight: bold;
+            font-size: 1em;
             color: #333;
-            margin-top: 15px;
+            margin-top: 20px;
             display: block;
+            font-weight: 500;
         }
 
-       
         input[type="text"],
         select,
         textarea {
             width: 100%;
             padding: 12px;
             margin-top: 8px;
-            border: 2px solid #ff9a9e;
-            border-radius: 6px;
-            background-color: #fafafa;
-            color: #444;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            color: #333;
             font-size: 1em;
-            transition: border-color 0.3s ease;
+            transition: border-color 0.3s;
         }
 
-        
         input[type="text"]:focus,
         select:focus,
         textarea:focus {
-            border-color: #f77f00;
+            border-color: #0066cc;
             outline: none;
         }
 
-        
         .radio-group, .checkbox-group {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 10px;
             margin-top: 10px;
         }
 
         input[type="radio"], input[type="checkbox"] {
             margin-right: 5px;
-            transform: scale(1.2);
+            transform: scale(1.1);
         }
 
-        
         input[type="submit"] {
             width: 100%;
-            padding: 15px;
-            margin-top: 30px;
+            padding: 14px;
+            margin-top: 20px;
             border: none;
-            border-radius: 6px;
-            background-color: #ff9a9e;
+            border-radius: 5px;
+            background-color: #0066cc;
             color: #fff;
             font-size: 1.1em;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: background-color 0.3s, transform 0.2s;
         }
 
         input[type="submit"]:hover {
-            background-color: #f77f00;
+            background-color: #005bb5;
             transform: translateY(-2px);
         }
 
@@ -106,14 +98,15 @@
     </style>
 </head>
 <body>
+
     <form action="" method="post">
         <h1>Web Programcılığı Testi</h1>
 
-        <!-- JavaScript Yılı Sorusu -->
+        <!-- JavaScript Yılı -->
         <label for="q1">JavaScript hangi yıl icat edilmiştir?</label>
         <input type="text" id="q1" name="q1" required>
 
-        
+        <!-- HTML Amaç -->
         <label for="q2">HTML hangi amaçla kullanılır?</label>
         <div class="radio-group">
             <input type="radio" id="structure" name="q2" value="Yapılandırma" required>
@@ -123,7 +116,7 @@
             <label for="design">Tasarım</label>
         </div>
 
-        
+        <!-- CSS Özelliği -->
         <label for="q3">CSS’de, font büyüklüğünü değiştirmek için hangi özellik kullanılır?</label>
         <select id="q3" name="q3" required>
             <option value="font-style">font-style</option>
@@ -131,7 +124,7 @@
             <option value="font-weight">font-weight</option>
         </select>
 
-        
+        <!-- HTML5 Etiketleri -->
         <label>HTML5 ile gelen yeni etiketler hangileridir?</label>
         <div class="checkbox-group">
             <input type="checkbox" id="video" name="q4[]" value="video">
@@ -147,13 +140,13 @@
             <label for="blink">blink</label>
         </div>
 
-        
+        <!-- İnteraktif Dil -->
         <label for="q5">Bir web sayfasına interaktif özellikler eklemek için hangi dil kullanılır?</label>
         <textarea id="q5" name="q5" rows="4" required></textarea>
 
-        
+        <!-- Gönder Butonu -->
         <input type="submit" value="Testi Bitir">
     </form>
+
 </body>
 </html>
-
