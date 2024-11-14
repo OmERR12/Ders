@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS Animations Examples</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+</head>
+<style>
+body {
+  background: #ff944d;
+}
+
+.div1 {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  animation: moveUpDown 3s infinite;
+}
+
+
+@keyframes moveUpDown {
+  0% { top: 0px; }
+  50% { top: 200px; }
+  100% { top: 0px; }
+}
+
+.div2 {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  animation: growShrinkColor 3s infinite;
+}
+
+
+@keyframes growShrinkColor {
+  0% {
+    transform: scale(1);
+    background-color: red;
+  }
+  50% {
+    transform: scale(1.5);
+    background-color: blue;
+  }
+  100% {
+    transform: scale(1);
+    background-color: red;
+  }
+}
+
+.div3 {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  animation: fadeInOut 3s infinite;
+}
+
+
+@keyframes fadeInOut {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.div4 {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  animation: moveLeftRight 3s infinite;
+}
+
+
+@keyframes moveLeftRight {
+  0% { left: 0px; }
+  50% { left: 200px; }
+  100% { left: 0px; }
+}
+
+.div5 {
+  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  animation: rotateAnimation 3s infinite;
+}
+
+
+@keyframes rotateAnimation {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(180deg); }
+  100% { transform: rotate(360deg); }
+}
+
+</style>
+<body>
+<br/><br/>
+<div class="container">
+  <br>
+  <div class="text-center">
+    <h1 id="color" style="color: white;">CSS Animation Examples</h1>
+  </div>
+  <br>
+  <div class="col-md-12">
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+    <div class="div4"></div>
+    <div class="div5"></div>
+  </div>
+</div>
+</body>
+</html>
