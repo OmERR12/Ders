@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kartlar</title>
     <style>
+        
         body {
             display: flex;
             justify-content: center;
@@ -33,21 +34,21 @@
             transition: transform 0.3s, background-color 0.3s;
         }
 
-       
-        .card:nth-child(1) { background-color: #FF5733; height: 100px; }  <!-- Kırmızı -->
-        .card:nth-child(2) { background-color: #33B5FF; height: 120px; }  <!-- Mavi -->
-        .card:nth-child(3) { background-color: #4CAF50; height: 140px; }  <!-- Yeşil -->
-        .card:nth-child(4) { background-color: #FFEB3B; height: 160px; }  <!-- Sarı -->
-        .card:nth-child(5) { background-color: #FF9800; height: 180px; }  <!-- Turuncu -->
-        .card:nth-child(6) { background-color: #9C27B0; height: 200px; }  <!-- Mor -->
-        .card:nth-child(7) { background-color: #8BC34A; height: 220px; }  <!-- Açık Yeşil -->
-        .card:nth-child(8) { background-color: #03A9F4; height: 240px; }  <!-- Açık Mavi -->
-        .card:nth-child(9) { background-color: #E91E63; height: 260px; }  <!-- Pembe -->
-        .card:nth-child(10) { background-color: #FF5722; height: 280px; }  <!-- Koyu Turuncu -->
-        .card:nth-child(11) { background-color: #00BCD4; height: 300px; }  <!-- Turkuaz -->
-        .card:nth-child(12) { background-color: #673AB7; height: 320px; }  <!-- Mor -->
+        /* Kart renkleri */
+        .card:nth-child(1) { background-color: #2D3142; height: 100px; }  
+        .card:nth-child(2) { background-color: #4F5D75; height: 120px; }
+        .card:nth-child(3) { background-color: #6C7588; height: 140px; }
+        .card:nth-child(4) { background-color: #C9D6D5; height: 160px; }
+        .card:nth-child(5) { background-color: #A0B8B3; height: 180px; }
+        .card:nth-child(6) { background-color: #F1A7B3; height: 200px; }
+        .card:nth-child(7) { background-color: #FF6F61; height: 220px; }
+        .card:nth-child(8) { background-color: #35A7A1; height: 240px; }
+        .card:nth-child(9) { background-color: #FF9F00; height: 260px; }
+        .card:nth-child(10) { background-color: #6B4226; height: 280px; }
+        .card:nth-child(11) { background-color: #C9D1D3; height: 300px; }
+        .card:nth-child(12) { background-color: #8E5A6D; height: 320px; } 
 
-       
+        /* Hover efekti */
         .card:hover {
             transform: scale(1.05);
             background-color: #333;
@@ -56,13 +57,13 @@
         
         @media (max-width: 576px) {
             .container {
-                grid-template-columns: 1fr; /* Tek sütun */
+                grid-template-columns: 1fr; 
             }
         }
 
         @media (min-width: 577px) and (max-width: 768px) {
             .container {
-                grid-template-columns: 1fr 1fr; /* İki sütun */
+                grid-template-columns: 1fr 1fr; 
             }
         }
 
@@ -96,3 +97,4 @@
     </div>
 </body>
 </html>
+
