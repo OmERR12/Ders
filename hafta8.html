@@ -6,13 +6,13 @@
     <title>Kartlar</title>
     <style>
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
         }
 
         .container {
@@ -21,37 +21,31 @@
             padding: 20px;
             width: 100%;
             max-width: 1200px;
-            grid-template-columns: repeat(1, 1fr);
         }
 
-       
         .card {
-            display: flex;
-            justify-content: center;
-            align-items: center;
             color: white;
-            border-radius: 8px;
             padding: 20px;
-            font-size: 1.2em;
-            font-weight: bold;
             text-align: center;
+            font-size: 1.2em;
+            border-radius: 8px;
             cursor: pointer;
             transition: transform 0.3s, background-color 0.3s;
         }
 
-        
-        .card:nth-child(1) { background-color: #FF6F61; }  
-        .card:nth-child(2) { background-color: #6B5B95; }
-        .card:nth-child(3) { background-color: #88B04B; }
-        .card:nth-child(4) { background-color: #F7CAC9; }
-        .card:nth-child(5) { background-color: #92A8D1; }
-        .card:nth-child(6) { background-color: #955251; }
-        .card:nth-child(7) { background-color: #B565A7; }
-        .card:nth-child(8) { background-color: #009B77; }
-        .card:nth-child(9) { background-color: #DD4124; }
-        .card:nth-child(10) { background-color: #45B8AC; }
-        .card:nth-child(11) { background-color: #EFC050; }
-        .card:nth-child(12) { background-color: #5B5EA6; }
+       
+        .card:nth-child(1) { background-color: #FF5733; height: 100px; }  <!-- Kırmızı -->
+        .card:nth-child(2) { background-color: #33B5FF; height: 120px; }  <!-- Mavi -->
+        .card:nth-child(3) { background-color: #4CAF50; height: 140px; }  <!-- Yeşil -->
+        .card:nth-child(4) { background-color: #FFEB3B; height: 160px; }  <!-- Sarı -->
+        .card:nth-child(5) { background-color: #FF9800; height: 180px; }  <!-- Turuncu -->
+        .card:nth-child(6) { background-color: #9C27B0; height: 200px; }  <!-- Mor -->
+        .card:nth-child(7) { background-color: #8BC34A; height: 220px; }  <!-- Açık Yeşil -->
+        .card:nth-child(8) { background-color: #03A9F4; height: 240px; }  <!-- Açık Mavi -->
+        .card:nth-child(9) { background-color: #E91E63; height: 260px; }  <!-- Pembe -->
+        .card:nth-child(10) { background-color: #FF5722; height: 280px; }  <!-- Koyu Turuncu -->
+        .card:nth-child(11) { background-color: #00BCD4; height: 300px; }  <!-- Turkuaz -->
+        .card:nth-child(12) { background-color: #673AB7; height: 320px; }  <!-- Mor -->
 
        
         .card:hover {
@@ -74,13 +68,13 @@
 
         @media (min-width: 769px) and (max-width: 992px) {
             .container {
-                grid-template-columns: 1fr 1fr 1fr; /* Üç sütun */
+                grid-template-columns: 1fr 1fr 1fr; 
             }
         }
 
         @media (min-width: 993px) {
             .container {
-                grid-template-columns: repeat(6, 1fr); /* Altı sütun */
+                grid-template-columns: repeat(6, 1fr); 
             }
         }
     </style>
