@@ -25,29 +25,29 @@
 </head>
 <body>
     <h1>Selam </h1>
-    <img id="animalImage" src="selam gif.gif" alt="Fotoğraf">
+    <img id="animalImage" src="Selam.jpg" alt="Fotoğraf">
     <div>
-        <button onclick="showkedi()">Kedi</button>
-        <button onclick="showkopek()">Köpek</button>
+        <button onclick="showTavsan()">Tavşan</button>
+        <button onclick="showKaplumbaga()">Kaplumbağa</button>
         <button onclick="showSelam()">Geri</button>
     </div>
 
     <script>
-        function showkedi() {
+        function showTavsan() {
             const image = document.getElementById("animalImage");
-            image.src = "kedi gif.gif"; 
-            image.alt = "Kedi Fotoğrafı";
+            image.src = "Tavşan.jpg"; 
+            image.alt = "Tavşan Fotoğrafı";
         }
 
-        function showkopek() {
+        function showKamplumbaga() {
             const image = document.getElementById("animalImage");
-            image.src = "köpek gif.gif"; 
-            image.alt = "Köpek Fotoğrafı";
+            image.src = "Kaplumbağa.jpg"; 
+            image.alt = "Kaplumbağa Fotoğrafı";
         }
 
         function showSelam() {
             const image = document.getElementById("animalImage");
-            image.src = "img/selam.jpg"; 
+            image.src = "Selam.jpg"; 
             image.alt = "Selam Fotoğrafı";
         }
     </script>
