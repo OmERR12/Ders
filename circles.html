@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10x10 Kare Deseni</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom, #f5f7fa, #c3cfe2);
+            font-family: Arial, sans-serif;
+        }
+
+        div {
+            text-align: center;
+        }
+
+        canvas {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+            border-radius: 10px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #4a4e69;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>10x10 Kare Deseni</h1>
+        <canvas id="canvas" width="500" height="500"></canvas>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        const rows = 10;
+        const cols = 10;
+        const squareSize = canvas.width / rows;
+
+        // Dinamik renkler için fonksiyon
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Deseni çiz
+        for (let i = 0; i < rows; i++) {
+            for (let j = 0; j < cols; j++) {
+                ctx.fillStyle = getRandomColor(); // Her kareye rastgele renk
+                ctx.fillRect(i * squareSize, j * squareSize, squareSize, squareSize);
+            }
+        }
+    </script>
+</body>
+</html>
