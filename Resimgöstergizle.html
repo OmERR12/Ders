@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastgele Arka Plan ve Resimler</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-image 0.5s ease-in-out;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: #3498db;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        img {
+            width: 300px;
+            height: auto;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .img-visible {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Rastgele Arka Plan ve Resimler</h1>
+        <div class="buttons">
+            <button onclick="changeBackground()">Arka Planı Değiştir</button>
+            <button onclick="toggleImage(1)">Resim 1 Göster/Gizle</button>
+            <button onclick="toggleImage(2)">Resim 2 Göster/Gizle</button>
+            <button onclick="toggleImage(3)">Resim 3 Göster/Gizle</button>
+        </div>
+
+        <div class="images">
+            <img id="img1" src="https://omerr12.github.io/Ders/cicek.jpg" alt="Resim 1">
+            <img id="img2" src="https://omerr12.github.io/Ders/bahce.jpg" alt="Resim 2">
+            <img id="img3" src="https://omerr12.github.io/Ders/kopek.jpg" alt="Resim 3">
+        </div>
+    </div>
+
+    <script>
+        // 10 farklı arka plan resmi URL'leri
+        const backgrounds = [
+            'https://omerr12.github.io/Ders/cicek.jpg',
+            'https://omerr12.github.io/Ders/bahce.jpg',
+            'https://omerr12.github.io/Ders/kopek.jpg',
+            'https://omerr12.github.io/Ders/doga.jpg',
+            'https://omerr12.github.io/Ders/sekill.jpg',
+            'https://omerr12.github.io/Ders/city.jpg',
+            'https://omerr12.github.io/Ders/sekil.jpg',
+            'https://omerr12.github.io/Ders/ev.jpg',
+            'https://omerr12.github.io/Ders/resim.jpg',
+            'https://omerr12.github.io/Ders/kulak.jpg'
+        ];
+
+        // Rastgele bir arka plan seçme fonksiyonu
+        function changeBackground() {
+            const randomIndex = Math.floor(Math.random() * backgrounds.length);
+            document.body.style.backgroundImage = `url(${backgrounds[randomIndex]})`;
+        }
+
+        // Resimlerin gösterilmesi/gizlenmesi
+        function toggleImage(imageId) {
+            const img = document.getElementById(`img${imageId}`);
+            img.classList.toggle('img-visible');
+        }
+
+        // Sayfa yüklendiğinde ilk arka planı değiştir
+        window.onload = changeBackground;
+    </script>
+
+</body>
+</html>
