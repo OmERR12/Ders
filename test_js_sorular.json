@@ -1,1 +1,115 @@
+{
+  "htmlQuestions": [
+    {
+      "id": 1,
+      "question": "HTML5 ile gelen yeni etiketlerden hangisi video eklemek için kullanılır?",
+      "options": [
+        "A: <video>",
+        "B: <media>",
+        "C: <embed>",
+        "D: <object>"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 2,
+      "question": "HTML'de bir sayfanın karakter seti hangi etiketle belirtilir?",
+      "options": [
+        "A: <meta charset='UTF-8'>",
+        "B: <meta>",
+        "C: <charset>",
+        "D: <head>"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 3,
+      "question": "HTML'de hangi etiket sayfanın başlık kısmını tanımlar?",
+      "options": [
+        "A: <title>",
+        "B: <head>",
+        "C: <meta>",
+        "D: <header>"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 4,
+      "question": "HTML'de hangi etiket ile bir liste oluşturulur?",
+      "options": [
+        "A: <ul>",
+        "B: <list>",
+        "C: <ol>",
+        "D: <li>"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 5,
+      "question": "HTML'de sayfa içinde başka bir sayfaya bağlanmak için hangi etiket kullanılır?",
+      "options": [
+        "A: <a>",
+        "B: <link>",
+        "C: <href>",
+        "D: <nav>"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 6,
+      "question": "HTML'de görsel boyutlarını belirtmek için hangi özellik kullanılır?",
+      "options": [
+        "A: width ve height",
+        "B: size",
+        "C: dimension",
+        "D: image-size"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 7,
+      "question": "HTML'de bir paragraf içinde metin hizalamak için hangi özellik kullanılır?",
+      "options": [
+        "A: align",
+        "B: text-align",
+        "C: justify",
+        "D: position"
+      ],
+      "answer": "B"
+    },
+    {
+      "id": 8,
+      "question": "HTML5'te hangi etiketle form alanı tanımlanır?",
+      "options": [
+        "A: <input>",
+        "B: <form>",
+        "C: <textarea>",
+        "D: <button>"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 9,
+      "question": "HTML'de bir sayfada stil uygulamak için hangi etiket kullanılır?",
+      "options": [
+        "A: <style>",
+        "B: <css>",
+        "C: <link>",
+        "D: <script>"
+      ],
+      "answer": "A"
+    },
+    {
+      "id": 10,
+      "question": "HTML'de hangi etiketle bir sayfada resim eklenir?",
+      "options": [
+        "A: <img>",
+        "B: <picture>",
+        "C: <image>",
+        "D: <src>"
+      ],
+      "answer": "A"
+    }
+  ]
+}
 
