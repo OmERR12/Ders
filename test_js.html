@@ -1,1 +1,220 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Uygulaması</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .question {
+            background-color: #f9f9f9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .question h2 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            font-size: 16px;
+            color: #444;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            display: none;
+        }
+
+        #popup h2 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        #popup p {
+            font-size: 20px;
+            color: #4CAF50;
+        }
+
+        #popup button {
+            background-color: #f44336;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 6px;
+            border: none;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        #popup button:hover {
+            background-color: #e53935;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Test Uygulaması</h1>
+        <button id="start-test">Testi Başlat</button>
+        <div id="questions-container"></div>
+    </div>
+
+    <div id="popup">
+        <h2>Test Sonucu</h2>
+        <p id="popup-result"></p>
+        <button id="close-popup">Kapat</button>
+    </div>
+
+    <div id="overlay"></div>
+
+    <script>
+        document.getElementById('start-test').addEventListener('click', function () {
+            fetch('https://raw.githubusercontent.com/abdullahbaspinar/web_tasarim/main/test_js_sorular.json')
+                .then(response => response.json())
+                .then(data => {
+                    const questionsContainer = document.getElementById('questions-container');
+                    questionsContainer.innerHTML = '';
+                    data.htmlQuestions.forEach((question, index) => {
+                        const questionElement = document.createElement('div');
+                        questionElement.classList.add('question');
+
+                        const title = document.createElement('h2');
+                        title.textContent = `${index + 1}. ${question.question}`;
+                        questionElement.appendChild(title);
+
+                        const optionsContainer = document.createElement('div');
+                        question.options.forEach(option => {
+                            const optionLabel = document.createElement('label');
+                            const optionInput = document.createElement('input');
+                            optionInput.type = 'radio';
+                            optionInput.name = `question-${index}`;
+                            optionInput.value = option[0];
+                            optionLabel.appendChild(optionInput);
+                            optionLabel.appendChild(document.createTextNode(option));
+                            optionsContainer.appendChild(optionLabel);
+                        });
+                        questionElement.appendChild(optionsContainer);
+
+                        questionsContainer.appendChild(questionElement);
+                    });
+
+                    const submitButton = document.createElement('button');
+                    submitButton.textContent = 'Sonucu Gör';
+                    questionsContainer.appendChild(submitButton);
+
+                    submitButton.addEventListener('click', function () {
+                        let score = 0;
+                        data.htmlQuestions.forEach((question, index) => {
+                            const selectedOption = document.querySelector(`input[name="question-${index}"]:checked`);
+                            if (selectedOption && selectedOption.value === question.answer) {
+                                score++;
+                            }
+                        });
+
+                        const popup = document.getElementById('popup');
+                        const popupResult = document.getElementById('popup-result');
+                        popupResult.textContent = `Sonuç: ${score}/${data.htmlQuestions.length} doğru!`;
+                        popup.style.display = 'block';
+                        document.getElementById('overlay').style.display = 'block';
+                    });
+                })
+                .catch(error => console.error('Error:', error));
+        });
+
+        document.getElementById('close-popup').addEventListener('click', function () {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        });
+
+        document.getElementById('overlay').addEventListener('click', function () {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>
 
